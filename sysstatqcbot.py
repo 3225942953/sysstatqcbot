@@ -6,7 +6,7 @@ from nakuru import (
 from botpy.message import Message, DirectMessage
 import psutil
 import os
-import platform
+import platform as sys_platform
 
 class SysStatQCBotPlugin:
     """
@@ -23,7 +23,7 @@ class SysStatQCBotPlugin:
             disk_info = psutil.disk_usage('/')
             cpu_ststs = psutil.cpu_stats()
             cpu_freq = psutil.cpu_freq()
-            system_version = platform.system() + " " + platform.release()  # 获取操作系统名称和版本信息
+            system_version = sys_platform.platform()  # 获取系统的完整版本信息，这里使用别名sys_platform
             
             res = f"""【服务器当前状态】
 操作系统: {system_version}
