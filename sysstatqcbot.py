@@ -23,7 +23,7 @@ class SysStatQCBotPlugin:
             disk_info = psutil.disk_usage('/')
             cpu_ststs = psutil.cpu_stats()
             cpu_freq = psutil.cpu_freq()
-            system_version = sys_platform.system()+" "+sys_platform.release()  # 获取系统的完整版本信息，这里使用别名sys_platform
+            system_version = sys_platform.linux_distribution()  # 获取系统的完整版本信息，这里使用别名sys_platform
             
             res = f"""【服务器当前状态】
 操作系统: {system_version}
