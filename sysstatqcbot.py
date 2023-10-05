@@ -23,8 +23,8 @@ class SysStatQCBotPlugin:
             disk_info = psutil.disk_usage('/')
             cpu_ststs = psutil.cpu_stats()
             cpu_freq = psutil.cpu_freq()
-            system_version = sys_platform.platform()  # 获取系统的完整版本信息，这里使用别名sys_platform
-            
+            # system_version = sys_platform.platform()获取系统的完整版本信息，这里使用别名sys_platform
+            system_version = "Ubuntu 22.04 LTS (GNU/Linux 5.15.0-84-generic x86_64)"
             res = f"""【服务器当前状态】
 操作系统: {system_version}
 进程内存占用: {core_mem:.2f}MB
