@@ -22,8 +22,11 @@ class SysStatQCBotPlugin:
             disk_info = psutil.disk_usage('/')
             cpu_ststs = psutil.cpu_stats()
             cpu_freq = psutil.cpu_freq()
+            system_name = platform.system()  # 获取系统名称（如：Linux、Windows、Darwin等）
+            system_version = platform.release()  # 获取系统版本号
             
             res = f"""【服务器当前状态】
+操作系统: {system_name} {system_version}
 进程内存占用: {core_mem:.2f}MB
 总内存: {sysmem_info.total / 1024 / 1024:.2f}MB
 已用内存: {sysmem_info.used / 1024 / 1024:.2f}MB
