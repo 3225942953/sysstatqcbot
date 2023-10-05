@@ -6,6 +6,7 @@ from nakuru import (
 from botpy.message import Message, DirectMessage
 import psutil
 import os
+import platform
 
 class SysStatQCBotPlugin:
     """
